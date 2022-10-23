@@ -6,7 +6,7 @@ import Card from "./Card";
 
 function Panel() {
   const { books, isLoading, error } = useBooks();
-  console.log(books.length)
+
   return (
     <div className="panel-cover">
       <div className="panel">
@@ -15,7 +15,7 @@ function Panel() {
       {!isLoading && 
         !error &&
         books.items &&
-        books.items.map((book) => <Card book={book} key={book.id} />)}
+        books.items.map((book, index) => <Card book={book} key={index} />)}
       </div>
     </div>
   );
