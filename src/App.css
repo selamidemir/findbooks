@@ -3,21 +3,80 @@ body {
   padding: 0;
 }
 
+.header-cover {
+  background-color: #f2f6d0;
+}
+
 .header {
+  width: 1024px;
+  padding: 15px;
+  margin: auto;
+}
+
+.top-menu {
+  width: 95%;
+  display: flex;
+  justify-content: right;
+}
+
+.search-box {
   display: flex;
   justify-content: center;
 }
 
-.top-menu {
-  text-align: right;
+.search-input {
+  padding: 5px;
+  font-size: 17px;
+  width: 45%;
+  margin-right: 5px;
+  padding-left: 35px;
+  background-repeat: no-repeat;
+  background-image: url(../public/search-icon.svg);
+  background-size: 25px 25px;
+  background-position: left center;
+  border-radius: 9px;
+  border: 1px lightgray solid;
 }
 
-.seach-box {
-  padding: 3px;
+.search-button {
+  padding: 5px;
+  font-size: 17px;
+  border-radius: 9px;
+  border: 1px lightgray solid;
+  cursor: pointer;
+}
+
+.panel {
+  margin: 15px auto;
+  width: 1024px;
+  min-height: 50vh;
+}
+
+.loading {
+  text-align: center;
+}
+
+.error {
+  text-align: center;
+  color: red;
 }
 
 .footer {
   padding: 15px;
   border-top: 1px gray solid;
   text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    width: 100%;
+    padding: 15px;
+  }
 }

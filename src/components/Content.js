@@ -1,8 +1,9 @@
 import React from 'react'
+import Panel from './Panel'
 
 function Content() {
   return (
-    <div>Content</div>
+    <div><Panel /></div>
   )
 }
 
