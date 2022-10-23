@@ -8,18 +8,22 @@ body {
 }
 
 .header {
-  width: 1024px;
   padding: 15px;
+  width: 100%;
+  max-width: 1024px;
   margin: auto;
 }
 
 .top-menu {
-  width: 95%;
+  width: 100%;
+  max-width: 1024px;
   display: flex;
   justify-content: right;
 }
 
 .search-box {
+  width: 100%;
+  max-width: 1024px;
   display: flex;
   justify-content: center;
 }
@@ -46,10 +50,30 @@ body {
   cursor: pointer;
 }
 
-.panel {
+.panel-cover {
+  width: 100%;
+  max-width: 1024px;
   margin: 15px auto;
-  width: 1024px;
+}
+
+.panel {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 15px;
+  margin: auto auto;
   min-height: 50vh;
+}
+
+.card {
+  border: 0px lightgray solid;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.card-title {
+  width: 100%;
+  display: inline-block;
 }
 
 .loading {
@@ -68,15 +92,46 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+  .panel-cover {
+    max-width: 900px;
+  }
+
+  .panel {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
+
+  .header-cover {
+    max-width: 900px;
+  }
+
   .header {
-    width: 100%;
-    padding: 15px;
+    max-width: 900px;
+  }
+
+  .top-menu {
+    max-width: 900px;
   }
 }
 
 @media screen and (max-width: 576px) {
+  .header-cover {
+    max-width: 576px;
+  }
+
   .header {
-    width: 100%;
-    padding: 15px;
+    max-width: 576px;
+  }
+
+  .top-menu {
+    max-width: 576px;
+  }
+
+  .panel-cover {
+    max-width: 576px;
+  }
+
+  .panel {
+    grid-template-columns: 0.9fr;
   }
 }
