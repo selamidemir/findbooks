@@ -19,7 +19,7 @@ function Card({ book }) {
 
   return (
     <div className="card">
-      {showDetails && <BookDetails book={book} />}
+      {showDetails && <BookDetails book={book} showWindow={setShowDetails} />}
       <div className="card-image">
         <img
           src={
@@ -40,8 +40,11 @@ function Card({ book }) {
         </a>
       </div>
       <div className="card-action">
-        PREVIEW |{" "}
-        <a href="/#" onClick={(e) => handleDetails(e)}>
+        <a href={book.volumeInfo.previewLink} title={book.volumeInfo.title}>
+          PREVIEW
+        </a>{" "}
+        |{" "}
+        <a href="/#" onClick={(e) => handleDetails(e)} title="Click for details.">
           DETAILS
         </a>
       </div>

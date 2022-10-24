@@ -68,12 +68,10 @@ body {
 
 .card {
   border: 0px lightgray solid;
-  /* box-shadow: 1px 1px 1px 1px; */
 }
 
 .card-image {
   text-align: center;
-  /* border: 1px lightgray solid; */
 }
 
 .card-image img {
@@ -81,7 +79,7 @@ body {
 }
 
 .card-title {
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   width: 100%;
   display: inline-block;
@@ -94,6 +92,10 @@ body {
   margin: 3px;
 }
 
+.card-author a {
+  color:deepskyblue;
+}
+
 .card-author a:hover {
   text-decoration: none;
 }
@@ -103,9 +105,20 @@ body {
   margin: 3px;
 }
 
+.card-action a {
+  color: dimgray;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.card-action a:hover {
+  text-decoration: underline;
+}
+
 .book-details {
   width: 400px;
-  height: 495px;
+  height: 475px;
   background-color: white;
   border: 1px lightblue solid;
 }
@@ -123,6 +136,82 @@ body {
   background-color: rgba(169, 169, 169, 0.5);
 }
 
+.book-header {
+  text-align: right;
+  padding-right: 11px;
+  color: black;
+  background-color: darkgray;
+}
+
+.book-header a {
+  color: black;
+  text-decoration: none;
+}
+
+.book-header a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.book-description-cover {
+  height: 440px;
+  overflow: auto;
+  padding: 11px;
+}
+
+.book-image {
+  float: left;
+  margin-right: 9px;
+}
+
+.book-title {
+  margin: 1px 1px;
+  color: rgba(0, 0, 0, 0.753);
+}
+
+.book-description {
+  margin-top: 3px;
+  color: gray;
+}
+
+.book-info {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color:dimgray;
+}
+
+.book-info span {
+  display: inline-block;
+  width: 115px;
+  margin-right: 5px;
+  font-weight: 500;
+  color: black;
+}
+
+.book-author a {
+  color:dodgerblue;
+}
+
+.book-author a:hover {
+  color:dodgerblue;
+  text-decoration: none;
+}
+
+.btn-link {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 15px;
+  background-color: paleturquoise;
+  color: black;
+  outline: none;
+  border: 1px gray solid;
+  border-radius: 3px;
+}
+
+.center {
+  text-align: center;
+}
+
 .loading {
   text-align: center;
 }
@@ -136,6 +225,15 @@ body {
   padding: 15px;
   border-top: 1px gray solid;
   text-align: center;
+}
+
+.footer a {
+  color:dodgerblue;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 900px) {

@@ -4,30 +4,38 @@ import axios from "axios";
 export const BooksContext = createContext();
 
 export const BooksProvider = ({ children }) => {
+  const maxItems = 50;
   const [books, setBooks] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   const searchBooks = async (query) => {
     setIsLoading(true);
-    const res = await axios.get(`${process.env.REACT_APP_SEARCH_API_URL}query`);
+    const url = `${process.env.REACT_APP_SEARCH_API_URL}${query}&startIndex=${startIndex}&maxItems=${maxItems}`;
+    console.log(url)
+    const res = await axios.get(url);
     setIsLoading(false);
-    console.log(res.data);
     if (res.status !== 200) setError(res.error);
-    else setBooks(res.data);
+    else {
+      setBooks(res.data);
+      setTotalItems(res.data.totalItems);
+      setStartIndex(books.length + res.data.items.length);
+    };
   };
 
-  const getAuthorBooks = async (authorId) => {
-    console.log(authorId);
-    // inauthor:keyes
+  const getAuthorBooks = async (authorName) => {
     setIsLoading(true);
     const res = await axios.get(
-      `${process.env.REACT_APP_SEARCH_API_URL}+inauthor:${authorId}`
+      `${process.env.REACT_APP_SEARCH_API_URL}+inauthor:${authorName}`
     );
     setIsLoading(false);
-    console.log(res.data);
     if (res.status !== 200) setError(res.error);
-    else setBooks(res.data);
+    else {
+      setBooks(res.data);
+      setTotalItems(res.data.totalItems);
+    };
   };
 
   const values = {
@@ -35,6 +43,8 @@ export const BooksProvider = ({ children }) => {
     error,
     setBooks,
     isLoading,
+    maxItems,
+    totalItems,
     searchBooks,
     getAuthorBooks,
   };
