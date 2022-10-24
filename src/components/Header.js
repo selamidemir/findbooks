@@ -1,12 +1,12 @@
 import React from "react";
 import SeachForm from "./SeachForm";
-import TopMenu from "./TopMenu";
+// import TopMenu from "./TopMenu";
 
 function Header() {
   return (
     <div className="header-cover">
       <div className="header">
-        <TopMenu />
+        {/* <TopMenu /> */}
         <SeachForm />
       </div>
     </div>

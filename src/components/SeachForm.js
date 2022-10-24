@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useBooks } from "../contexts/BooksContext";
 
 function SeachForm() {
-  const [query, setQuery] = useState("react");
+  const [query, setQuery] = useState("");
   const { searchBooks } = useBooks();
 
   const handleChange = (e) => {
