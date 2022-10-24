@@ -27,9 +27,8 @@ export const BooksProvider = ({ children }) => {
 
   const getAuthorBooks = async (authorName) => {
     setIsLoading(true);
-    const res = await axios.get(
-      `${process.env.REACT_APP_SEARCH_API_URL}+inauthor:${authorName}`
-    );
+    const url = `${process.env.REACT_APP_SEARCH_API_URL}+inauthor:${authorName}`;
+    const res = await axios.get(url);
     setIsLoading(false);
     if (res.status !== 200) setError(res.error);
     else {

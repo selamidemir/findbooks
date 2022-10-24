@@ -11,3 +11,13 @@ Uygulama **React JS** ile geliştirildi. Tasarımda **CSS** kullanıldı. Api i�
 Uygulama için alınan ekran görüntüleri.
 
 ![Findbooks](findbooks-screen-shut.png)
+
+## Kullanım
+
+Arama işleminin yapılması için kök dizinde **.env** dosyası oluşturularak
+
+```
+REACT_APP_SEARCH_API_URL=https://www.googleapis.com/books/v1/volumes?q=
+```
+
+kodunun eklenmesi gereklidir. Yada BooksContext üzerinde **searchBooks** ve **getAuthorsBooks** fonksiyonlarında **url** değişkeni bu bilgiye göre düzenlenmelidir.
